@@ -1,0 +1,850 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alyssa Mae F. Soliven | E-Portfolio</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Trebuchet MS", Arial, sans-serif;
+            background: #FFF5F8;
+            color: #593B47;
+        }
+
+        /* 3D TEXT EFFECT */
+
+        h1, h2, h3 {
+            text-shadow:
+                1px 1px 0 #D99AB3,
+                2px 2px 0 #C77D9A,
+                3px 3px 0 #E8B9CB,
+                5px 5px 7px #E7D3DC;
+        }
+
+        header {
+            background: linear-gradient(135deg, #FFF5F8, #E8B9CB);
+            text-align: center;
+            padding: 30px 15px;
+            box-shadow: 0 7px 0 #C77D9A;
+        }
+
+        header h1 {
+            color: #8E4966;
+            font-size: 38px;
+            transition: 0.4s;
+        }
+
+        header h1:hover {
+            transform: scale(1.05) rotate(-1deg);
+            text-shadow:
+                2px 2px 0 #FFFFFF,
+                4px 4px 0 #C77D9A,
+                7px 7px 10px #E7D3DC;
+        }
+
+        header p {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 13px;
+            letter-spacing: 3px;
+            line-height: 1.8;
+            font-weight: 600;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            background: #F4DCE6;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            display: inline-block;
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 10px 18px;
+            margin: 5px;
+            border-radius: 20px;
+            background: #C77D9A;
+            box-shadow: 3px 4px 0 #D99AB3;
+            transition: 0.3s;
+            font-size: 15px;
+            font-weight: bold;
+            letter-spacing: 0.3px;
+        }
+
+        nav a:hover {
+            background: #FFF5F8;
+            color: #593B47;
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 5px 7px 0 #D99AB3;
+        }
+
+        section {
+            padding: 45px 8%;
+            scroll-margin-top: 85px;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #A94F76;
+            font-size: 32px;
+            margin-bottom: 30px;
+            transition: 0.3s;
+        }
+
+        .section-title:hover {
+            transform: scale(1.04);
+        }
+
+        /* HOME */
+
+        #home {
+            min-height: 420px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .home-box {
+            max-width: 750px;
+            width: 100%;
+            background: #FFFFFF;
+            border: 3px solid #D99AB3;
+            border-radius: 25px;
+            padding: 45px 25px;
+            box-shadow: 9px 9px 0 #E8B9CB;
+            transition: 0.4s;
+        }
+
+        .home-box:hover {
+            transform: translateY(-6px);
+            box-shadow: 13px 13px 0 #C77D9A;
+        }
+
+        .home-box h2 {
+            font-size: 36px;
+            color: #A94F76;
+        }
+
+        .home-box p {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 16px;
+            line-height: 1.9;
+            letter-spacing: 0.3px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #C77D9A;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-top: 12px;
+            box-shadow: 4px 5px 0 #D99AB3;
+            transition: 0.3s;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background: #A94F76;
+            transform: translateY(-4px);
+            box-shadow: 6px 8px 0 #E7D3DC;
+        }
+
+        /* ABOUT - FASHION MAGAZINE STYLE */
+
+        #about {
+            background: #FFF5F8;
+            color: #593B47;
+            padding: 25px 3%;
+        }
+
+        #about .section-title {
+            display: none;
+        }
+
+        .magazine {
+            position: relative;
+            max-width: 1150px;
+            min-height: 680px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 43% 57%;
+            background: #F4DCE6;
+            overflow: hidden;
+        }
+
+        .magazine-photo {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 65%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .magazine-copy {
+            position: relative;
+            z-index: 3;
+            padding: 45px 10px 25px 15px;
+            align-self: start;
+            margin-top: 25px;
+        }
+
+        .magazine-copy h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(32px, 4vw, 55px);
+            text-transform: uppercase;
+            line-height: 0.98;
+            color: #8E4966;
+            margin: 0 0 28px;
+            text-shadow: none;
+        }
+
+        .magazine-copy h2 span {
+            display: block;
+            font-style: italic;
+            font-weight: normal;
+        }
+
+        .magazine-copy p {
+            font-family: Georgia, "Times New Roman", serif;
+            color: #654452;
+            font-size: 16px;
+            line-height: 1.9;
+            letter-spacing: 0.3px;
+            font-weight: 400;
+            margin: 0 0 14px;
+        }
+
+        .magazine-name {
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            left: 30%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            font-size: clamp(70px, 11vw, 140px);
+            font-weight: 900;
+            line-height: 0.8;
+            letter-spacing: -4px;
+            color:;
+            -webkit-text-stroke: 2px white;
+            pointer-events: none;
+        }
+
+        .magazine-label {
+            position: absolute;
+            z-index: 4;
+            right: 12px;
+            top: 20px;
+            writing-mode: vertical-rl;
+            font-family: Georgia, serif;
+            font-size: 17px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #8E4966;
+        }
+
+        .magazine-caption {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            line-height: 1.8;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-top: 1px solid #C77D9A;
+            padding-top: 12px;
+            margin-top: 25px;
+        }
+
+        /* PROJECTS */
+
+        #projects {
+            background: #FFF5F8;
+        }
+
+        .project-intro {
+            text-align: center;
+            max-width: 650px;
+            margin: -10px auto 30px;
+            line-height: 1.9;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 16px;
+            letter-spacing: 0.3px;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            --card-color: #F8E4EC;
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            min-height: 245px;
+            text-align: center;
+            background: linear-gradient(145deg, #FFFFFF, var(--card-color));
+            padding: 25px 20px 22px;
+            border: 1px solid #D99AB3;
+            border-radius: 24px 24px 24px 8px;
+            box-shadow: 6px 7px 0 #E8B9CB;
+            transition: transform 0.35s, box-shadow 0.35s;
+        }
+
+        .project-card:nth-child(4n+1) {
+            --card-color: #F3D6E2;
+        }
+
+        .project-card:nth-child(4n+2) {
+            --card-color: #F8E4EC;
+        }
+
+        .project-card:nth-child(4n+3) {
+            --card-color: #F1DCE6;
+        }
+
+        .project-card:nth-child(4n+4) {
+            --card-color: #F5D1E0;
+        }
+
+        .project-card::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            width: 130px;
+            height: 130px;
+            right: -45px;
+            top: -45px;
+            border: 18px solid rgba(255, 255, 255, 0.38);
+            border-radius: 50%;
+            transition: transform 0.45s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px) rotate(-1deg);
+            box-shadow: 10px 13px 0 #C77D9A;
+        }
+
+        .project-card:hover::before {
+            transform: scale(1.25) rotate(25deg);
+        }
+
+        .project-number {
+            display: inline-block;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            color: #914D69;
+            background: #FFFFFF;
+            border: 1px solid #E2B2C5;
+            padding: 6px 10px;
+            border-radius: 20px;
+        }
+
+        .emoji {
+            display: block;
+            font-size: 43px;
+            margin: 18px 0 10px;
+            transition: transform 0.4s;
+            filter: drop-shadow(3px 4px 2px #D99AB3);
+        }
+
+        .project-card:hover .emoji {
+            transform: rotate(-10deg) scale(1.18);
+        }
+
+        .project-card h3 {
+            color: #82435D;
+            margin: 12px 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 30px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-shadow:
+                2px 2px 0 #E8B9CB,
+                4px 4px 0 #D99AB3;
+        }
+
+        .project-card a {
+            display: inline-block;
+            margin: 8px 3px 0;
+            padding: 9px 15px;
+            background: #C77D9A;
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            box-shadow: 3px 4px 0 #D99AB3;
+            transition: 0.3s;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .project-card a:hover {
+            background: #FCE8EF;
+            color: #7A3E58;
+            transform: translateY(-3px);
+        }
+
+        /* CONTACT */
+
+        #contact {
+            background: #F4DCE6;
+        }
+
+        .contact-box {
+            max-width: 650px;
+            margin: auto;
+            background: #FFFFFF;
+            padding: 30px;
+            border-radius: 20px;
+            border: 2px solid #D99AB3;
+            box-shadow: 7px 7px 0 #E8B9CB;
+            line-height: 2;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .contact-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 10px 10px 0 #C77D9A;
+        }
+
+        .contact-box p {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 16px;
+            line-height: 1.9;
+        }
+
+        .contact-box a:not(.button) {
+            color: #A94F76;
+            font-weight: bold;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 3px;
+            overflow-wrap: anywhere;
+        }
+
+        /* FLOATING DECORATION */
+
+        .floating {
+            position: fixed;
+            bottom: 15px;
+            right: 18px;
+            font-size: 27px;
+            animation: float 3s ease-in-out infinite;
+            z-index: 5;
+            pointer-events: none;
+            text-shadow: 2px 3px 4px #E8B9CB;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(-5deg);
+            }
+
+            50% {
+                transform: translateY(-15px) rotate(8deg);
+            }
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #E8B9CB;
+            color: #593B47;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer p {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 14px;
+            line-height: 1.8;
+            letter-spacing: 0.5px;
+            text-shadow: none;
+        }
+
+        /* MOBILE VIEW */
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            nav {
+                padding: 10px 5px;
+            }
+
+            nav a {
+                padding: 8px 12px;
+                font-size: 13px;
+                margin: 4px 2px;
+            }
+
+            section {
+                padding: 35px 6%;
+            }
+
+            .home-box {
+                padding: 30px 18px;
+            }
+
+            .home-box h2 {
+                font-size: 28px;
+            }
+
+            .home-box p,
+            .magazine-copy p,
+            .project-intro,
+            .contact-box p {
+                font-size: 15px;
+                line-height: 1.8;
+            }
+
+            #about {
+                padding: 12px;
+            }
+
+            .magazine {
+                min-height: 800px;
+                display: block;
+            }
+
+            .magazine-photo {
+                width: 100%;
+                height: 53%;
+                object-position: center 25%;
+            }
+
+            .magazine-name {
+                left: 28%;
+                height: 53%;
+                font-size: clamp(82px, 23vw, 135px);
+                letter-spacing: -5px;
+            }
+
+            .magazine-copy {
+                margin-top: 380px;
+                padding: 15px 18px 25px;
+                background: #F4DCE6;
+            }
+
+            .magazine-copy h2 {
+                font-size: 35px;
+                margin-bottom: 15px;
+            }
+
+            .magazine-copy p {
+                margin-bottom: 12px;
+            }
+
+            .magazine-caption {
+                font-size: 11px;
+                letter-spacing: 1px;
+            }
+
+            .project-grid {
+                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+                gap: 18px;
+            }
+
+            .project-card {
+                padding: 20px 12px;
+            }
+
+            .project-card h3 {
+                font-size: 25px;
+            }
+
+            .project-card a {
+                font-size: 13px;
+                padding: 9px 11px;
+            }
+
+            .contact-box {
+                padding: 22px 15px;
+            }
+
+            footer p {
+                font-size: 13px;
+            }
+
+            .magazine-label {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+        <h1>♡ Alyssa Mae F. Soliven ♡</h1>
+        <p>✦ FINAL WEBSITE PROJECT ✦</p>
+    </header>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <a href="#home">⌂ Home</a>
+        <a href="#about">♡ About</a>
+        <a href="#projects">✿ Projects</a>
+        <a href="#contact">✉ Contact</a>
+    </nav>
+
+    <div class="floating" aria-hidden="true">🤎 ✦ ♡</div>
+
+    <!-- HOME -->
+
+    <section id="home">
+        <div class="home-box">
+            <h2>Hi! Welcome to My Website! ♡</h2>
+
+            <p>
+                Hello and welcome to my website.
+                I'm happy to have you here.
+            </p>
+
+            <p>
+                Feel free to explore my website.
+                Thank you for visiting! ✨
+            </p>
+
+            <a href="#about" class="button">Explore My Website →</a>
+        </div>
+    </section>
+
+    <!-- ABOUT ME -->
+
+    <section id="about">
+        <div class="magazine">
+
+            <img
+                src="profile.png"
+                alt="Photo of Alyssa Mae Soliven"
+                class="magazine-photo"
+            >
+
+            <div class="magazine-name" aria-hidden="true">
+                <span>A</span>
+                <span>L</span>
+                <span>Y</span>
+                <span>S</span>
+                <span>S</span>
+                <span>A</span>
+            </div>
+
+            <div class="magazine-label">
+                BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY
+            </div>
+
+            <div class="magazine-copy">
+                <h2>
+                    About Me ♡
+                </h2>
+
+                <p>I am Alyssa Mae Soliven.</p>
+                <p>I'm 18 years old.</p>
+                <p>
+                    I live at P-3 Villa Gonzaga, Santiago City,
+                    Isabela, Philippines.
+                </p>
+                <p>
+                    1st year student at
+                    Northeastern College.
+                </p>
+                <p>
+                    Taking Bachelor of Science in
+                    Information Technology.
+                </p>
+
+                <div class="magazine-caption">
+                    💜 Alyssa Mae F. Soliven • BSIT 1-B 💜
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PROJECTS: HTML EXERCISES -->
+
+    <section id="projects">
+        <h2 class="section-title">✿ HTML Exercises ✿</h2>
+
+        <p class="project-intro">
+            ✦ Every exercise is a small step in my IT journey. ✦<br>
+            Explore my practice projects and watch my skills grow,
+            one line of code at a time!
+        </p>
+
+        <div class="project-grid">
+
+            <!-- EXERCISE 1 -->
+            <div class="project-card">
+                <span class="project-number">01</span>
+                <div class="emoji">🎀</div>
+                <h3>Exercise 1</h3>
+                <a href="activities/exercise1.html">Open Exercise</a>
+            </div>
+
+            <!-- EXERCISE 2 -->
+            <div class="project-card">
+                <span class="project-number">02</span>
+                <div class="emoji">🎀</div>
+                <h3>Exercise 2</h3>
+                <a href="activities/exercise2.html">Open Exercise</a>
+            </div>
+
+            <!-- EXERCISE 3 -->
+            <div class="project-card">
+                <span class="project-number">03</span>
+                <div class="emoji">🎀</div>
+                <h3>Exercise 3</h3>
+                <a href="activities/exercise3.html">Open Exercise</a>
+            </div>
+
+            <!-- EXERCISE 4 -->
+            <div class="project-card">
+                <span class="project-number">04</span>
+                <div class="emoji">🎀</div>
+                <h3>Exercise 4</h3>
+                <a href="activities/exercise4.html">Open Exercise</a>
+            </div>
+
+            <!-- EXERCISE 5: TWO HTML FILES -->
+            <div class="project-card">
+                <span class="project-number">05</span>
+                <div class="emoji">🎀</div>
+                <h3>Exercise 5</h3>
+                <a href="activities/exercise5.1.html">
+                    Open Exercise 5.1
+                </a>
+                <a href="activities/exercise5.2.html">
+                    Open Exercise 5.2
+                </a>
+            </div>
+
+            <!-- EXERCISE 6 -->
+            <div class="project-card">
+                <span class="project-number">06</span>
+                <div class="emoji">🎀</div>
+                <h3>Exercise 6</h3>
+                <a href="activities/exercise6.html">Open Exercise</a>
+            </div>
+
+            <!-- EXERCISE 7 -->
+            <div class="project-card">
+                <span class="project-number">07</span>
+                <div class="emoji">🎀</div>
+                <h3>Exercise 7</h3>
+                <a href="activities/exercise7.html">Open Exercise</a>
+            </div>
+
+            <!-- EXERCISE 8 -->
+            <div class="project-card">
+                <span class="project-number">08</span>
+                <div class="emoji">🎀</div>
+                <h3>Exercise 8</h3>
+                <a href="activities/exercise8.html">Open Exercise</a>
+            </div>
+
+            <!-- EXERCISE 9 -->
+            <div class="project-card">
+                <span class="project-number">09</span>
+                <div class="emoji">🎀</div>
+                <h3>Exercise 9</h3>
+                <a href="activities/exercise9.html">Open Exercise</a>
+            </div>
+
+            <!-- EXERCISE 10 -->
+            <div class="project-card">
+                <span class="project-number">10</span>
+                <div class="emoji">🎀</div>
+                <h3>Exercise 10</h3>
+                <a href="activities/exercise10.html">Open Exercise</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+        <h2 class="section-title">♡ Contact ♡</h2>
+
+        <div class="contact-box">
+            <p>Thank you for visiting my website!</p>
+            <p>You can connect with me through the links below.</p>
+
+            <p>
+                📧 Email:
+                <a href="mailto:solivenalyssamae@gmail.com">
+                    solivenalyssamae@gmail.com
+                </a>
+            </p>
+
+            <p>
+                Facebook:
+                <a
+                    href="https://www.facebook.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Alyssa Mae Soliven
+                </a>
+            </p>
+
+            <p>
+                Instagram:
+                <a
+                    href="https://www.instagram.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    solivenalyssamaeferrer
+                </a>
+            </p>
+
+            <p>SECTION: BSIT 1-B</p>
+
+            <a href="#home" class="button">Back to Home ↑</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+        <p>♡ Made with love by Alyssa Mae F. Soliven ♡</p>
+        <p>BSIT 1-B | My Personal Website</p>
+    </footer>
+
+</body>
+</html>
